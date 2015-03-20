@@ -74,8 +74,8 @@ public:
 			if (nodeToRemove->next == NULL)//If it's the end
 			{
 
-				nodeToRemove->previous->next = NULL;
-				end = nodeToRemove->previous;
+				nodeToRemove->previous->next = NULL;//Previous to nodeToRemove pointing to next must point to the where nodeToRemove points
+				end = nodeToRemove->previous; //'Cause we are removing end end must point to previous of NodeRemove
 
 			}
 			else if (nodeToRemove->previous == NULL)//if it's at the beginning
@@ -88,7 +88,7 @@ public:
 				else//If the node is at the beginning but there's more nodes after it
 				{
 					nodeToRemove->next->previous = NULL;//We set null to the next node after the first that is being removed
-					start = nodeToRemove->next;
+					start = nodeToRemove->next;//Start must point to the next because we are removing the first element
 				}
 					
 
@@ -106,24 +106,18 @@ public:
 		
 		}
 
-		delete nodeToRemove;
+		delete nodeToRemove;//We must delete the node because it has no dependencies left
 		return true;
 	}
 
-	void clear()
-	{
-		Node<TYPE>*   tmp_data;
-		Node<TYPE>*   tmp_next;
-		tmp_data = start;
+	void Clear()//No vaig tenir temps 
+	{/*
+		Loop to iterate through the list, start to end or end to start deleting nodes
 
-		while (tmp_data != NULL)
-		{
-			tmp_next = tmp_data->next;
-			delete (tmp_data);
-			tmp_data = tmp_next;
-		}
+		Also start and end must be set to null (no more nodes)
 
-		start = end = NULL;
+		Delete list.
+		*/
 	}
 
 

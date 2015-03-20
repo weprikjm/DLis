@@ -14,6 +14,10 @@ int main(int argc, char* argv[])
 	list.Add(n2);
 	list.Add(n3);
 
+	list.RemoveElement(/*Com creo un node i li passo per debugar*/);
+
+	//list.clear();
+
 	getchar();
 	return 0;
 }
