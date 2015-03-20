@@ -44,7 +44,7 @@ public:
 	}
 
 
-	void Add(const TYPE& oneNode)
+	void Add(TYPE oneNode)
 	{
 		if (oneNode != NULL)
 		{
@@ -108,6 +108,34 @@ public:
 
 		delete nodeToRemove;//We must delete the node because it has no dependencies left
 		return true;
+	}
+
+	Node<TYPE>* getElementAtPos(unsigned int i)
+	{
+		Node<TYPE>* tmp = start;
+
+		if (tmp != NULL && i < Count())
+		{
+			for (int c = 0; c < i; c++)
+			{
+			
+				tmp = tmp->next;
+			}
+			return tmp;
+		}
+			
+	
+	}
+	unsigned int Count()
+	{
+		int counter = 0;
+		Node<TYPE>*tmp = start;
+		while (tmp != NULL)
+		{
+			tmp = tmp->next;
+			counter++;
+		}
+		return counter;
 	}
 
 	void Clear()//No vaig tenir temps 

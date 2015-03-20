@@ -6,15 +6,19 @@ int main(int argc, char* argv[])
 
 	DList<int> list;
 
-	int n1 = 2;
-	int n2 = 1;
+	int n1 = 1;
+	int n2 = 2;
 	int n3 = 3;
 
 	list.Add(n1);
 	list.Add(n2);
 	list.Add(n3);
-
-	list.RemoveElement(/*Com creo un node i li passo per debugar*/);
+	//printf("%d", list.getStart());
+	//printf("%d", list.getEnd());
+	list.RemoveElement(list.getElementAtPos(0));
+	list.RemoveElement(list.getElementAtPos(0));
+	list.RemoveElement(list.getElementAtPos(0));
+	printf("%d", list.getStart());
 
 	//list.clear();
 
